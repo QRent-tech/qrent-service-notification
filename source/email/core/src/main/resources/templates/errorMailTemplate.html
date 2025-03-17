@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error in Q-Rental App</title>
+</head>
+<body>
+
+<p>Dear, Support User.</p>
+<p>Error (UUID:
+    <b th:text="${uuid}">???</b>)
+    with cause: <b th:text="${errorMessage}">???</b>
+</p>
+<div>For more technical details please see the Stack Trace:</div>
+<div>
+    <small th:text="${stackTrace}">???</small>
+</div>
+<br>
+<div>Q-Rental App</div>
+</body>
+</html>

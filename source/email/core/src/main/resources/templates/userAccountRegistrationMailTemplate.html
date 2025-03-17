@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New User Account Registration</title>
+</head>
+<body>
+
+<div>Hello,<b th:text="${userAccountInfo}">.</b></div>
+<p>You successfully created a User Account in Q-Rental billing system.</p>
+<div>Your credentials:</div>
+<div>username: <b th:text="${username}"></b></div>
+<div>password: <b th:text="${password}"></b></div>
+<div>Please do not share your credentials!</div>
+</body>
+</html>

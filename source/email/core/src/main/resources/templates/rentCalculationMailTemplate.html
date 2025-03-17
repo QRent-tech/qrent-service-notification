@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculation completed</title>
+</head>
+<body>
+
+<p>Dear Operational,</p>
+<p>Calculation for
+    <b th:text="${calculationType}">???</b>
+    was completed on <b th:text="${calculationDate}">???</b>
+</p>
+<div>Next transactions were created:</div>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Call Sign</th>
+        <th>Driver</th>
+        <th>Transaction Type</th>
+        <th>Amount</th>
+        <th>Week</th>
+        <th>Date</th>
+        <th>Comment</th>
+    </tr>
+    <tr th:if="${#lists.isEmpty(transactions)}">
+        <td colspan="6">No Transactions</td>
+    </tr>
+    <tr th:each="transaction : ${transactions}">
+        <td th:text="${transaction.id}">???</td>
+        <td th:text="${transaction.callSign}">???</td>
+        <td th:text="${transaction.driverInfo}">???</td>
+        <td th:text="${transaction.type}">???</td>
+        <td class="text-center bg-opacity-10 border border-opacity-10 rounded-2"
+            th:classappend="${transaction.realAmount<0} ?
+                'text-danger bg-danger border-danger'
+                : 'text-success bg-success border-success'"
+            th:text="${transaction.realAmount}">???
+        </td>
+        <td th:text="${transaction.weekNumber}">???</td>
+        <td th:text="${transaction.date}">???</td>
+        <td th:text="${transaction.comment}">???</td>
+    </tr>
+</table>
+<div> С уважением,</div>
+<div> Q Rental Group.</div>
+</body>
+</html>
